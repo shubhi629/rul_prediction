@@ -1,4 +1,5 @@
 import os
+os.environ["KERAS_BACKEND"] = "jax"
 import pickle
 import numpy as np
 import keras
