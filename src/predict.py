@@ -1,15 +1,14 @@
 import os
-os.environ["KERAS_BACKEND"] = "jax"
 import pickle
 import numpy as np
-import keras
+import tensorflow as tf
 import streamlit as st
 
 SEQ_LEN = 30
 
 @st.cache_resource
 def load_keras_model(model_path):
-    return keras.models.load_model(model_path, compile=False)
+    return tf.keras.models.load_model(model_path, compile=False)
 
 def make_sequences(df, feature_cols, seq_len=SEQ_LEN):
     X_seqs = []
