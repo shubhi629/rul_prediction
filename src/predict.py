@@ -8,7 +8,7 @@ SEQ_LEN = 30
 
 @st.cache_resource
 def load_keras_model(model_path):
-    return tf.keras.models.load_model(model_path, compile=False)
+    return tf.keras.models.load_model(model_path, compile=False, safe_mode=False)
 
 def make_sequences(df, feature_cols, seq_len=SEQ_LEN):
     X_seqs = []
