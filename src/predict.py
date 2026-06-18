@@ -1,14 +1,14 @@
 import os
 import pickle
 import numpy as np
-import tensorflow as tf
+import keras
 import streamlit as st
 
 SEQ_LEN = 30
 
 @st.cache_resource
 def load_keras_model(model_path):
-    return tf.keras.models.load_model(model_path, compile=False)
+    return keras.models.load_model(model_path, compile=False)
 
 def make_sequences(df, feature_cols, seq_len=SEQ_LEN):
     X_seqs = []
